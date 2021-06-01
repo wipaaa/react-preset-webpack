@@ -1,7 +1,7 @@
+const { extendDefaultPlugins } = require('svgo');
 const { merge } = require('webpack-merge');
 const path = require('path');
 
-const { extendDefaultPlugins } = require('svgo');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
