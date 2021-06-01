@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "webpack --config webpack/webpack.common"
+    "build": "webpack --config webpack/webpack.prod",
+    "dev": "webpack --config webpack/webpack.dev"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
