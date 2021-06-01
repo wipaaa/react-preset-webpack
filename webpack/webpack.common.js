@@ -32,7 +32,15 @@ module.exports = {
         include: /[\\/]src[\\/]/i,
         type: 'asset/resource',
         generator: {
-          name: 'images/[name].webp[query]',
+          filename: 'images/[name].webp[query]',
+        },
+      },
+      {
+        test: /\.(svg)$/i,
+        include: /[\\/]src[\\/]/i,
+        type: 'asset',
+        generator: {
+          filename: 'images/[name][ext][query]',
         },
       },
     ],

@@ -1,8 +1,10 @@
 const { merge } = require('webpack-merge');
 const path = require('path');
 
+const { extendDefaultPlugins } = require('svgo');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -24,6 +26,32 @@ module.exports = merge(common, {
         collapseWhitespace: true,
         removeAttributeQuotes: true,
         removeComments: true,
+      },
+    }),
+    new ImageMinimizerPlugin({
+      deleteOriginalAssets: true,
+      include: /[\\/]src[\\/]/i,
+      minimizerOptions: {
+        plugins: [
+          ['imagemin-webp'],
+          [
+            'imagemin-svgo',
+            {
+              plugins: extendDefaultPlugins([
+                {
+                  name: 'removeViewBox',
+                  active: false,
+                },
+                {
+                  name: 'addAttributesToSVGElement',
+                  params: {
+                    attributes: [{ xmlns: 'http://www.w3.org/2000/svg' }],
+                  },
+                },
+              ]),
+            },
+          ],
+        ],
       },
     }),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash:8].bundle.css' }),
