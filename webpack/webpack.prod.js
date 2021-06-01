@@ -4,16 +4,18 @@ const path = require('path');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const common = require('./webpack.common'); // the common webpack configuration
-
-const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'production',
   output: { filename: '[name].[contenthash:8].bundle.js' },
   optimization: {
-    minimizer: [new CssMinimizerPlugin()],
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin({ terserOptions: { mangle: true } }),
+    ],
   },
   plugins: [
     new HtmlPlugin({
