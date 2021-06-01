@@ -13,6 +13,9 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'arrow-parens': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'no-unused-vars': 'warn',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': 'off',
   },
