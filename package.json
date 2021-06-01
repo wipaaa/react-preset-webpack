@@ -7,9 +7,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "webpack --config webpack/webpack.prod",
-    "dev": "webpack --config webpack/webpack.dev",
-    "start": "webpack serve --config webpack/webpack.dev"
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod",
+    "dev": "cross-env NODE_ENV=development webpack --config webpack/webpack.dev",
+    "start": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.dev"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
@@ -17,6 +17,7 @@
     "@babel/preset-react": "^7.13.13",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
     "eslint": "^7.27.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.23.4",
