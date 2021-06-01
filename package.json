@@ -6,7 +6,9 @@
   "author": "wipaaa <ini.wipaaa@gmail.com>",
   "license": "MIT",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "build": "webpack --config webpack/webpack.common"
+  },
   "devDependencies": {
     "eslint": "^7.27.0",
     "eslint-config-airbnb": "^18.2.1",
