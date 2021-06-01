@@ -1,0 +1,10 @@
+{
+  "name": "react-preset-webpack",
+  "description": "My personal preference for React JS with Webpack projects.",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "wipaaa <ini.wipaaa@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {}
+}
