@@ -27,6 +27,14 @@ module.exports = {
         include: /[\\/]src[\\/]/i,
         use: ['babel-loader'],
       },
+      {
+        test: /\.(jpe?g|png|gif)$/i,
+        include: /[\\/]src[\\/]/i,
+        type: 'asset/resource',
+        generator: {
+          name: 'images/[name].webp[query]',
+        },
+      },
     ],
   },
   plugins: [new ProgressPlugin()],
