@@ -1,9 +1,15 @@
 import { StrictMode } from 'react';
 import { render } from 'react-dom';
 
+import App from './components/App';
+
 render(
   <StrictMode>
-    <h1>Hello from ReactJS</h1>
+    <App />
   </StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
+
+if (module.hot) {
+  module.hot.accept();
+}
