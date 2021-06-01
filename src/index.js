@@ -5,5 +5,5 @@ render(
   <StrictMode>
     <h1>Hello from ReactJS</h1>
   </StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
